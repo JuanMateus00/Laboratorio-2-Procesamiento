@@ -22,6 +22,6 @@ En la Parte A del laboratorio se trabajó con un sistema discreto h[n] y una se�
 <img src="parteA_diagrama.png" width="400">
 
 ## Señal y[n] resultante de la convolución:
-Aquí se muestra la parte desarrollada tanto a mano como en phyton para la obtención de la señal y[n]
+Representación gráfica y secuencial (a mano) de y[n]
 
 
