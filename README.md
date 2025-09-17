@@ -22,9 +22,16 @@ En la Parte A del laboratorio se trabajó con un sistema discreto h[n] y una se�
 <img src="parteA_diagrama.png" width="400">
 
 ## Señal y[n] resultante de la convolución:
-1. Representación gráfica y secuencial (a mano) de y[n]
+
+1. Representación gráfica y secuencial (a mano) de y[n]:
 <p align="center">
 <img src="Convolución-a-mano.png" width="1000">
 <p align="center">
 <img src="Gráfica-a-mano.png" width="1000">
+
+2. Representación gráfica y secuencial (en Phyton) de y[n]:
+
+```python
+
+```
 
