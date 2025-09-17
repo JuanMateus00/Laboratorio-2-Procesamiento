@@ -20,5 +20,5 @@ La librería `wfdb` se utilizó para la lectura y manipulación de las señales 
 En la Parte A del laboratorio se trabajó con un sistema discreto h[n] y una señal de entrada x[n], definidos a partir de los dígitos de nuestros códigos y cédulas respectivamente. El objetivo fue aplicar la operación de convolución para obtener la señal de salida y[n]. A continuación, se muestra el diagrama de flujo que describe cada paso de esta parte del laboratorio.
 
 <img width="397" height="601" alt="image" src="parteA_diagrama.png" />
-</p>
+
 
