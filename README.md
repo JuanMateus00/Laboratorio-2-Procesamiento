@@ -53,7 +53,7 @@ h3=[5,6,0,0,8,3,3]
 x3=[1,0,1,9,9,8,6,0,3,6]
 y3=np.convolve(x3,h3)
 ```
-Ahora para graficar: Inicialmente se generan los índices `n` para que cada punto tenga una posición ordenada en la gráfica, esto con la función `np.arange(len(h1))`. Luego se crea una figura de 8x8 con `plt.figure(figsize=(8,8))`
+Ahora para graficar: Inicialmente se generan los índices `n` para que cada punto tenga una posición ordenada en la gráfica, esto con la función `np.arange(len(h1))`. Luego se crea una figura de 8x8 con `plt.figure(figsize=(8,8))`, se hacen tres subgráficas con la función `plt.subplot(3,1,1)` y finalmente se muestran las tres gráficas juntas con `plt.show()`. Se repiten estos pasos dos veces más para obtener las demás gráficas.
 
 ```python
 #GRÁFICAS JUAN
@@ -147,6 +147,8 @@ plt.grid(True)
 
 plt.show()
 ```
+En resumen, el código toma una señal de entrada (cédula) y la pasa por un sistema definido por h[n] (código). Luego, mediante convolución, se calcula la salida y todo se grafica. De esto se obtuvieron las siguientes gráficas: 
+
 
 
 
