@@ -160,6 +160,7 @@ En resumen, el código toma una señal de entrada (cédula) y la pasa por un sis
 <p align="center">
 <img src="gráficas Ralf.jpg" width="400">
 
+## PARTE B
 
 
 
