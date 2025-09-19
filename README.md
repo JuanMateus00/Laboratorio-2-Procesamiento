@@ -148,6 +148,8 @@ plt.grid(True)
 plt.show()
 ```
 En resumen, el código toma una señal de entrada (cédula) y la pasa por un sistema definido por h[n] (código). Luego, mediante convolución, se calcula la salida y todo se grafica. De esto se obtuvieron las siguientes gráficas: 
+<p align="center">
+<img src="gráficas Juan.jpg" width="400">
 
 
 
