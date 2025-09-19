@@ -151,6 +151,12 @@ En resumen, el código toma una señal de entrada (cédula) y la pasa por un sis
 <p align="center">
 <img src="gráficas Juan.jpg" width="400">
 
+<p align="center">
+<img src="gráficas Kevin.jpg" width="400">
+
+<p align="center">
+<img src="gráficas Ralf.jpg" width="400">
+
 
 
 
