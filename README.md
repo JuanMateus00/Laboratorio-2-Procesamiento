@@ -32,6 +32,112 @@ En la Parte A del laboratorio se trabajó con un sistema discreto h[n] y una se�
 2. Representación gráfica y secuencial (en Phyton) de y[n]:
 
 ```python
+#Definimos h[n] y x[n]
 
+#Juan
+h1=[5,6,0,0,7,8,7]
+x1=[1,0,5,7,5,7,6,1,6,9]
+y1=np.convolve(x1,h1)
+
+#Kevin
+h2=[5,6,0,0,7,5,8]
+x2=[1,0,2,3,1,6,3,4,7,5]
+y2=np.convolve(x2,h2)
+
+#Ralf
+h3=[5,6,0,0,8,3,3]
+x3=[1,0,1,9,9,8,6,0,3,6]
+y3=np.convolve(x3,h3)
+
+#GRÁFICAS JUAN
+
+n1 = np.arange(len(h1))
+n2 = np.arange(len(x1))
+n3 = np.arange(len(y1))
+
+plt.figure(figsize=(8,8))
+
+#Código: 
+plt.subplot(3,1,1) 
+plt.stem(n1,h1)
+plt.title("Código Juan")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+#Cédula: 
+plt.subplot(3,1,2) 
+plt.stem(n2,x1)
+plt.title("Cédula Juan")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+#Convolución:
+plt.subplot(3,1,3) 
+plt.stem(n3,y1)
+plt.title("Convolución")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+plt.show()
+
+#GRÁFICAS KEVIN
+n1 = np.arange(len(h2))
+n2 = np.arange(len(x2))
+n3 = np.arange(len(y2))
+
+plt.figure(figsize=(8,8))
+
+#Código: 
+plt.subplot(3,1,1) 
+plt.stem(n1,h2)
+plt.title("Código Kevin")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+#Cédula: 
+plt.subplot(3,1,2) 
+plt.stem(n2,x2)
+plt.title("Cédula Kevin")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+#Convolución:
+plt.subplot(3,1,3) 
+plt.stem(n3,y2)
+plt.title("Convolución")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+plt.show()
+
+#GRÁFICAS RALF
+n1 = np.arange(len(h3))
+n2 = np.arange(len(x3))
+n3 = np.arange(len(y3))
+
+plt.figure(figsize=(8,8))
+
+#Código: 
+plt.subplot(3,1,1) 
+plt.stem(n1,h3)
+plt.title("Código Ralf")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+#Cédula: 
+plt.subplot(3,1,2) 
+plt.stem(n2,x3)
+plt.title("Cédula Ralf")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+#Convolución:
+plt.subplot(3,1,3) 
+plt.stem(n3,y3)
+plt.title("Convolución")
+plt.ylabel("Amplitud")
+plt.grid(True)
+
+plt.show()
 ```
 
