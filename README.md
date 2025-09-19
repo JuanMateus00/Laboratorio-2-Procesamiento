@@ -31,6 +31,10 @@ En la Parte A del laboratorio se trabajó con un sistema discreto h[n] y una se�
 
 2. Representación gráfica y secuencial (en Phyton) de y[n]:
 
+El código que se muestra a continuación, calcula la convolución entre dos señales utilizando la función `np.convolve()` de` NumPy`.
+
+Primero, se definen dos listas, `h[n]` (código) y `x[n]` (cédula), que representan la respuesta al impulso de un sistema y una señal de entrada, respectivamente. Luego, se aplica la convolución entre estas dos señales usando `np.convolve(x, h,)`, lo que genera una nueva señal producto de multiplicar y sumar los valores de las señales iniciales. 
+
 ```python
 #Definimos h[n] y x[n]
 
@@ -48,7 +52,10 @@ y2=np.convolve(x2,h2)
 h3=[5,6,0,0,8,3,3]
 x3=[1,0,1,9,9,8,6,0,3,6]
 y3=np.convolve(x3,h3)
+```
+Ahora para graficar: Inicialmente se generan los índices `n` para que cada punto tenga una posición ordenada en la gráfica, esto con la función `np.arange(len(h1))`. Luego se crea una figura de 8x8 con `plt.figure(figsize=(8,8))`
 
+```python
 #GRÁFICAS JUAN
 
 n1 = np.arange(len(h1))
@@ -140,4 +147,6 @@ plt.grid(True)
 
 plt.show()
 ```
+
+
 
