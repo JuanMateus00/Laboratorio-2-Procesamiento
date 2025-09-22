@@ -232,7 +232,7 @@ Resulta útil aplicar la correlación cruzada enel procesamiento digital de señ
 - Análisis de sincronización: Evaluar si dos señales están correlacionadas y en qué medida.
 
 - Reducción de ruido: Comparar una señal medida con una señal de referencia limpia, para extraer información relevante incluso en presencia de interferencias.
-- 
+
 ## PARTE C
 
 <p align="center">
@@ -365,6 +365,7 @@ plt.ylabel("Potencia")
 plt.grid(True)
 plt.show()
 ```
-
+<p align="center">
+<img src="Transformada de Fourier.png" width="400">
 
 
