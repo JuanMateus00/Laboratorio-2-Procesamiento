@@ -218,7 +218,7 @@ plt.show()
   
 ## PARTE C
 
-Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 1000 Hz, garantizando el cumplimiento del criterio de Nyquist y la duración de la adquisición (5 segundos). Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
+Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 800 Hz, garantizando el cumplimiento del criterio de Nyquist y la duración de la adquisición (5 segundos). Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
 
 Este código importa una señal EOG desde un archivo `CSV` mediante la librería `pandas`, selecciona las variables correspondientes a tiempo y voltaje, y posteriormente genera la gráfica con ayuda de `matplotlib`. En la representación se muestra cómo varía el voltaje (en voltios) a lo largo del tiempo.
 
@@ -242,7 +242,7 @@ import numpy as np                 # Librería de funciones matemáticas
 
 #%% Adquisición de la señal por tiempo definido
 
-fs = 1000           # Frecuencia de muestreo en Hz. Recordar cumplir el criterio de Nyquist
+fs = 800           # Frecuencia de muestreo en Hz. Recordar cumplir el criterio de Nyquist
 duracion = 5       # Periodo por el cual desea medir en segundos
 senal = []          # Vector vacío en el que se guardará la señal
 dispositivo = 'Dev1/ai0' # Nombre del dispositivo/canal (se puede cambiar el nombre en NI max)
@@ -269,6 +269,7 @@ plt.grid()
 plt.title(f"fs={fs}Hz, duración={duracion}s, muestras={len(senal)}")
 plt.show()
 ```
+
 
 
 
