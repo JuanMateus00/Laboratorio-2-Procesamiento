@@ -222,7 +222,17 @@ plt.show()
 ```
 <p align="center">
 <img src="Grafica Correlacion.png" width="400">
-  
+
+Resulta útil aplicar la correlación cruzada enel procesamiento digital de señales 
+
+- Detección de patrones o eventos repetidos: Identificar si una señal contiene un fragmento o patrón conocido (por ejemplo, el reconocimiento de formas de onda en señales biológicas como ECG o EOG).
+
+- Estimación de retardo temporal: Determinar el desfase entre dos señales similares.
+
+- Análisis de sincronización: Evaluar si dos señales están correlacionadas y en qué medida.
+
+- Reducción de ruido: Comparar una señal medida con una señal de referencia limpia, para extraer información relevante incluso en presencia de interferencias.
+- 
 ## PARTE C
 
 <p align="center">
@@ -325,8 +335,9 @@ Es aperiódica, porque no sigue un patrón repetitivo perfecto, aunque puede mos
 - Analógica o digital:
 Originalmente es una señal analógica, pero en la gráfica que me mostraste aparece ya digitalizada tras el proceso de adquisición con el sistema DAQ.
 
-  Se obtiene la Transformada de Fourier para examinar el contenido en el dominio de la frecuencia, mostrando únicamente los componentes positivos hasta 100 Hz para facilitar la interpretación.
+Finalmente, se calcula la Transformada de Fourier para examinar el contenido en el dominio de la frecuencia, mostrando únicamente los componentes positivos hasta 100 Hz para facilitar la interpretación.
 Además, se calcula la densidad espectral de potencia mediante el método de Welch y se representan gráficamente ambos análisis para observar cómo se distribuye la energía de la señal.
+
 ```python
 f_psd, Pxx = welch(signal2.values, fs, nperseg=1024)
 
@@ -354,5 +365,6 @@ plt.ylabel("Potencia")
 plt.grid(True)
 plt.show()
 ```
+
 
 
