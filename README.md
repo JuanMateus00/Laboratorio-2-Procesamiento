@@ -314,6 +314,17 @@ Cuyos valores fueron:
 - Máximo: 0.78249 V 
 - Mínimo: -0.50221 V
 
+Seguidamente, se clasificó la señal según su tipo.
+
+- Determinística o aleatoria:
+Es aleatoria, ya que depende de la actividad eléctrica del ojo y no se puede predecir exactamente su comportamiento matemático.
+
+- Periódica o aperiódica:
+Es aperiódica, porque no sigue un patrón repetitivo perfecto, aunque puede mostrar repeticiones parciales debidas a movimientos oculares.
+
+- Analógica o digital:
+Originalmente es una señal analógica, pero en la gráfica que me mostraste aparece ya digitalizada tras el proceso de adquisición con el sistema DAQ.
+
   Se obtiene la Transformada de Fourier para examinar el contenido en el dominio de la frecuencia, mostrando únicamente los componentes positivos hasta 100 Hz para facilitar la interpretación.
 Además, se calcula la densidad espectral de potencia mediante el método de Welch y se representan gráficamente ambos análisis para observar cómo se distribuye la energía de la señal.
 ```python
@@ -343,17 +354,5 @@ plt.ylabel("Potencia")
 plt.grid(True)
 plt.show()
 ```
-
-Seguidamente, se clasificó la señal según su tipo.
-
-- Determinística o aleatoria:
-Es aleatoria, ya que depende de la actividad eléctrica del ojo y no se puede predecir exactamente su comportamiento matemático.
-
-- Periódica o aperiódica:
-Es aperiódica, porque no sigue un patrón repetitivo perfecto, aunque puede mostrar repeticiones parciales debidas a movimientos oculares.
-
-- Analógica o digital:
-Originalmente es una señal analógica, pero en la gráfica que me mostraste aparece ya digitalizada tras el proceso de adquisición con el sistema DAQ.
-
 
 
