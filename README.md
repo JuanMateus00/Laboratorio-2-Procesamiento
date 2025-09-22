@@ -223,11 +223,6 @@ plt.show()
 <p align="center">
 <img src="diagrama_flujo_senal_biologica.png" width="400">
 
-<p align="center">
-<img src="señalLL JIJI.png" width="400">
-
-
-
 Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 800 Hz, garantizando el cumplimiento del criterio de Nyquist y el periodo, es decir, el tiempo de adquisición que fue de 5 segundos. Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
 
 ```python
@@ -294,11 +289,27 @@ signal2= df.iloc[:, 1]
 ```
 
 <p align="center">
-<img src="Grafica Correlacion.png" width="400">
+<img src="señalLL JIJI.png" width="400">
 
 Ahora, se caracterizó la señal obteniendo la media, la mediana, desviación estándar, máximo y mínimo.
 
+```python
+senal=signal2
+media = np.mean(senal)
+mediana = np.median(senal)
+desviacion = np.std(senal)
+maximo = np.max(senal)
+minimo = np.min(senal)
+```
 
+Cuyos valores fueron: 
+- Media: 0.16253 V
+- Mediana: 0.13810 V 
+- Desviación estándar: 0.14802  
+- Máximo: 0.78249 V 
+- Mínimo: -0.50221 V
+
+Finalmente, se clasificó la señal según su tipo.
 
 - Determinística o aleatoria:
 Es aleatoria, ya que depende de la actividad eléctrica del ojo y no se puede predecir exactamente su comportamiento matemático.
