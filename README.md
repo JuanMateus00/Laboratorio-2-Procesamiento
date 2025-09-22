@@ -161,6 +161,58 @@ En resumen, el código toma una señal de entrada (cédula) y la pasa por un sis
 <img src="gráficas Ralf.jpg" width="400">
 
 ## PARTE B
+<p align="center">
+<img src="ParteB_Diagrama.png" width="400">
+  
+Para la parte B, el objetivo es calcular la correlacion cruzada entre las señales x1[n] y x2[n]. para comenzar se activa el formato de impresion en LaTeX con:
+python
+init_printing(use_latex=True)
+
+Luego se define el periodo de muetreo y el vector de indices, que genera las nueve muetras de n=0 hasta n=8.
+python
+Ts = 1.25e-3
+n = np.arange(9)
+
+
+Con los parametros listos, se construyen las dos secuencias discretas para la señal del coseno y la señal del seno, ambas de 100Hz.
+python
+X1 = np.cos(2*np.pi*100*n*Ts)
+X2 = np.sin(2*np.pi*100*n*Ts)
+
+Una vez generada las señales, se calcula la correlacion cruzada. Primero se obtiene la longitud de la secuencia con N = len(X1) y se define el rango de retardos lags = np.arange(-N+1, N), que va de –8 a +8. Luego se recorre cada retardo k en un bucle. Para cada k, se acumulan los productos X1[i] * X2[i + k] siempre que el índice desplazado i + k esté dentro de los límites de la señal. Cada suma se agrega a la lista r_manual, que finalmente se convierte en un arreglo de NumPy.
+python
+N = len(X1)
+r_manual = []
+lags = np.arange(-N+1, N)
+for k in lags:
+    suma = 0
+    for i in range(N):
+        if 0 <= i + k < N:
+            suma += X1[i] * X2[i + k]
+    r_manual.append(suma)
+
+r_manual = np.array(r_manual)
+
+Finalmente, se muestran las secuencias y la correlación cruzada. Se imprimen los valores de X1[n], X2[n] y r_manual redondeados a cinco decimales con np.round(...,5) y se presentan en forma de matriz usando display(Matrix(...)). Esta parte representa la etapa Generar la tabla de resultados del diagrama de flujo, permitiendo ver claramente las dos señales y la secuencia de correlación obtenida.
+python
+print("X1[n]:")
+display(Matrix(np.round(X1,5)))
+print("\n")
+
+print("X2[n]:")
+display(Matrix(np.round(X2,5)))
+print("\n")
+
+print("Correlacion cruzada:")
+display(Matrix(np.round(r_manual,5)))
+
+Finalmente para visualizar la secuencia resultante se utiliza un diagrama de tipo "stem", que muestra los valores de la correlacion para cada retardo.
+python
+plt.stem(lags, r_manual)
+plt.xlabel("Retardo k")
+plt.title("Correlacion cruzada")
+plt.grid(True)
+plt.show()
 
 
 ## PARTE C
