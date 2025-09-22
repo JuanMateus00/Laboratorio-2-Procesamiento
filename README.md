@@ -166,5 +166,53 @@ En resumen, el código toma una señal de entrada (cédula) y la pasa por un sis
 ## PARTE C
 Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 1000 Hz, garantizando el cumplimiento del criterio de Nyquist y la duración de la adquisición (5 segundos). Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
 
+```python
+
+Librería de uso de la DAQ
+!python -m pip install nidaqmx     
+
+Driver NI DAQ mx
+!python -m nidaqmx installdriver   
+
+Created on Thu Aug 21 08:36:05 2025
+@author: Carolina Corredor
+"""
+
+# Librerías: 
+import nidaqmx                     # Librería daq. Requiere haber instalado el driver nidaqmx
+from nidaqmx.constants import AcquisitionType # Para definir que adquiera datos de manera consecutiva
+import matplotlib.pyplot as plt    # Librería para graficar
+import numpy as np                 # Librería de funciones matemáticas
+
+#%% Adquisición de la señal por tiempo definido
+
+fs = 800           # Frecuencia de muestreo en Hz. Recordar cumplir el criterio de Nyquist
+duracion = 5       # Periodo por el cual desea medir en segundos
+senal = []          # Vector vacío en el que se guardará la señal
+dispositivo = 'Dev3/ai0' # Nombre del dispositivo/canal (se puede cambiar el nombre en NI max)
+
+total_muestras = int(fs * duracion)
+
+with nidaqmx.Task() as task:
+    # Configuración del canal
+    task.ai_channels.add_ai_voltage_chan(dispositivo)
+    # Configuración del reloj de muestreo
+    task.timing.cfg_samp_clk_timing(
+        fs,
+        sample_mode=AcquisitionType.FINITE,   # Adquisición finita
+        samps_per_chan=total_muestras        # Total de muestras que quiero
+    )
+
+    # Lectura de todas las muestras de una vez
+    senal = task.read(number_of_samples_per_channel=total_muestras)
+
+t = np.arange(len(senal))/fs # Crea el vector de tiempo 
+plt.plot(t,senal)
+plt.axis([0,duracion,-0.7,0.11])
+plt.grid()
+plt.title(f"fs={fs}Hz, duración={duracion}s, muestras={len(senal)}")
+plt.show()
+```
+
 
 
