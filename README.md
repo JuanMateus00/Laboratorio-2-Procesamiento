@@ -293,4 +293,11 @@ Ahora, se caracterizó la señal obteniendo la media, la mediana, desviación es
 
 
 
+- Determinística o aleatoria:
+Es aleatoria, ya que depende de la actividad eléctrica del ojo y no se puede predecir exactamente su comportamiento matemático.
 
+- Periódica o aperiódica:
+Es aperiódica, porque no sigue un patrón repetitivo perfecto, aunque puede mostrar repeticiones parciales debidas a movimientos oculares.
+
+- Analógica o digital:
+Originalmente es una señal analógica, pero en la gráfica que me mostraste aparece ya digitalizada tras el proceso de adquisición con el sistema DAQ.
