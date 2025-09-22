@@ -186,10 +186,10 @@ import numpy as np                 # Librería de funciones matemáticas
 
 #%% Adquisición de la señal por tiempo definido
 
-fs = 800           # Frecuencia de muestreo en Hz. Recordar cumplir el criterio de Nyquist
+fs = 1000           # Frecuencia de muestreo en Hz. Recordar cumplir el criterio de Nyquist
 duracion = 5       # Periodo por el cual desea medir en segundos
 senal = []          # Vector vacío en el que se guardará la señal
-dispositivo = 'Dev3/ai0' # Nombre del dispositivo/canal (se puede cambiar el nombre en NI max)
+dispositivo = 'Dev1/ai0' # Nombre del dispositivo/canal (se puede cambiar el nombre en NI max)
 
 total_muestras = int(fs * duracion)
 
