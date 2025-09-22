@@ -24,7 +24,9 @@ En la Parte A del laboratorio se trabajó con un sistema discreto h[n] y una se�
 <p align="center">
 <img src="parteA_diagrama.png" width="400">
 
+            
 ## Señal y[n] resultante de la convolución:
+            
 
 1. Representación gráfica y secuencial (a mano) de y[n]:
 <p align="center">
