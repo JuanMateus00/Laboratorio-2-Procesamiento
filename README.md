@@ -219,10 +219,10 @@ plt.show()
 ## PARTE C
 
 <p align="center">
-<img src="señalLL JIJI.png" width="400">
+<img src="diagrama_flujo_senal_biologica.png" width="400">
 
 <p align="center">
-<img src="diagrama_flujo_senal_biologica.png" width="400">
+<img src="señalLL JIJI.png" width="400">
 
 
 
