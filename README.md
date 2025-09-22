@@ -162,7 +162,25 @@ En resumen, el código toma una señal de entrada (cédula) y la pasa por un sis
 <p align="center">
 <img src="gráficas Ralf.jpg" width="400">
 
-
+## PARTE B
+<p align="center">
+<img src="ParteB_Diagrama.png" width="400">
+  
+Para la parte B, el objetivo es calcular la correlacion cruzada entre las señales x1[n] y x2[n]. para comenzar se activa el formato de impresion en LaTeX con:
+```python
+init_printing(use_latex=True)
+```
+Luego se define el periodo de muetreo y el vector de indices, que genera las nueve muetras de n=0 hasta n=8.
+```python
+Ts = 1.25e-3
+n = np.arange(9)
+```
+Con los parametros listos, se construyen las dos secuencias discretas para la señal del coseno y la señal del seno, ambas de 100Hz.
+```python
+X1 = np.cos(2*np.pi*100*n*Ts)
+X2 = np.sin(2*np.pi*100*n*Ts)
+```
+Una vez generada las señales, se calcula la correlacion cruzada. Primero se obtiene la longitud de la secuencia con `N = len(X1)` y se define el rango de retardos `lags = np.arange(-N+1, N)`, que va de –8 a +8. Luego se recorre cada retardo k en un bucle. Para cada `k`, se acumulan los productos `X1[i] * X2[i + k]` siempre que el índice desplazado `i + k` esté dentro de los límites de la señal. Cada suma se agrega a la `lista r_manual`, que finalmente se convierte en un arreglo de NumPy.
 ```python
 N = len(X1)
 r_manual = []
