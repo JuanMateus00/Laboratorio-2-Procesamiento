@@ -365,6 +365,7 @@ plt.ylabel("Potencia")
 plt.grid(True)
 plt.show()
 ```
+
 <p align="center">
 <img src="Transformada de Fourier.png" width="400">
 
