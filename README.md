@@ -163,4 +163,8 @@ En resumen, el código toma una señal de entrada (cédula) y la pasa por un sis
 ## PARTE B
 
 
+## PARTE C
+Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 1000 Hz, garantizando el cumplimiento del criterio de Nyquist y la duración de la adquisición (5 segundos). Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
+
+
 
