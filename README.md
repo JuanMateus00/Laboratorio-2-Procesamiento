@@ -218,9 +218,10 @@ plt.show()
   
 ## PARTE C
 
-Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 800 Hz, garantizando el cumplimiento del criterio de Nyquist y el periodo, es decir, el tiempo de adquisición que fue de 5 segundos. Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
+<p align="center">
+<img src="Grafica Correlacion.png" width="400">
 
-Este código importa la señal EOG desde un archivo `CSV` mediante la librería `pandas`, selecciona las variables correspondientes a tiempo y voltaje, y posteriormente genera la gráfica con ayuda de `matplotlib`. En la representación se muestra cómo varía el voltaje (en voltios) a lo largo del tiempo.
+Para la adquisición de la señal EOG se empleó el código suministrado, el cual hace uso de la librería `nidaqmx`, encargada de gestionar la comunicación con los dispositivos NI DAQ para registrar señales analógicas. En dicho código se establecen el canal de entrada analógica, la frecuencia de muestreo de 800 Hz, garantizando el cumplimiento del criterio de Nyquist y el periodo, es decir, el tiempo de adquisición que fue de 5 segundos. Posteriormente, se efectúa una lectura finita de las muestras y la señal se almacena en un vector. Finalmente, se genera una gráfica que representa la señal en función del tiempo, lo que permite observar la EOG en formato digital lista para su análisis posterior.
 
 ```python
 
@@ -269,6 +270,26 @@ plt.grid()
 plt.title(f"fs={fs}Hz, duración={duracion}s, muestras={len(senal)}")
 plt.show()
 ```
+Este código importa la señal EOG desde un archivo `CSV` mediante la librería `pandas`, selecciona las variables correspondientes a tiempo y voltaje, y posteriormente genera la gráfica con ayuda de `matplotlib`. En la representación se muestra cómo varía el voltaje (en voltios) a lo largo del tiempo.
+
+```python
+df = pd.read_csv('senal_guardada2.csv')
+x = df.iloc[:, 0]
+y = df.iloc[:, 1]
+plt.figure(figsize=(10, 5))
+plt.plot(x,y,color='black')
+plt.title('Señal de EOG extraida')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Voltaje (V)')
+plt.grid(True)
+plt.show()
+signal2= df.iloc[:, 1]
+```
+
+<p align="center">
+<img src="Grafica Correlacion.png" width="400">
+
+Ahora, se caracterizó la señal obteniendo la media, la mediana, desviación estándar, máximo y mínimo.
 
 
 
